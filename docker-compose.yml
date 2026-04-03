@@ -1,0 +1,47 @@
+services:
+  db:
+    build: .
+    container_name: postgis_db
+    restart: always
+    shm_size: 256mb
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgis_data:/var/lib/postgresql/data
+      # Mapeo a tu carpeta de scripts
+      - ./scripts:/docker-entrypoint-initdb.d:ro 
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10mb"
+        max-file: "3"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pg_admin_ui
+    restart: always
+    user: root # Para evitar líos de permisos en el volumen de Ubuntu
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+      PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: 'True'
+      PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 30
+    ports:
+      - "127.0.0.1:8081:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - db
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10mb"
+        max-file: "3"
+
+volumes:
+  postgis_data:
+  pgadmin_data:
