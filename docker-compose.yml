@@ -1,7 +1,7 @@
 services:
   db:
     build: .
-    image: postgis_es_support:latest
+    image: postgis_es_support:lean
     container_name: postgis_db
     restart: always
     shm_size: 256mb
