@@ -1,7 +1,9 @@
 services:
   db:
-    build: .
-    image: postgis_es_support:lean
+    build:
+      context: .
+      dockerfile: docker/postgis_data/Dockerfile
+    image: arbitriumassesment:latest
     container_name: postgis_db
     restart: always
     shm_size: 256mb
@@ -12,9 +14,7 @@ services:
     ports:
       - "127.0.0.1:5432:5432"
     volumes:
-      - postgis_data:/var/lib/postgresql/data
-      # Mapeo a tu carpeta de scripts
-      - ./scripts:/docker-entrypoint-initdb.d:ro 
+      - postgis_data:/var/lib/postgresql/data 
     logging:
       driver: "json-file"
       options:
