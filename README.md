@@ -60,22 +60,10 @@ docker compose up -d
 Abrir en el navegador `http://localhost:8081` y en el formulario indicar las credenciales definidas en `PG_ADMIN_EMAIL` Y `PGADMIN_PASSWORD` definidas previamente en `.env` puede ejecutar las queries indicadas en el documento `REQUISITOS.md` que se encuentra dentro de  📁`compliances`
 
 ## Contacto
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-<div style="display: flex; gap: 25px; align-items: center;">
-
-  <a href="https://www.linkedin.com/in/ing-jose-perez/" target="_blank" style="text-decoration: none;">
-    <i class="fa-brands fa-linkedin" style="color: #0077B5; font-size: 40px;"></i>
-  </a>
-
-  <a href="https://github.com/jperez-xcvi" target="_blank" style="text-decoration: none;">
-    <i class="fa-brands fa-github" style="color: #181717; font-size: 40px;"></i>
-  </a>
-
-  <a href="mailto:hosuke.cano@gmail.com?subject=Solicitud Entrevista&body=Me%20interesa%20tu%20perfil" style="text-decoration: none;">
-    <i class="fa-solid fa-envelope" style="color: #D44638; font-size: 40px;"></i>
-  </a>
-
+<div style="display: flex; gap: 10px;">
+  <a href="https://www.linkedin.com/in/ing-jose-perez/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+  <a href="https://github.com/jperez-xcvi"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"></a>
+  <a href="mailto:hosuke.cano@gmail.com?subject=Solicitud Entrevista"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
 </div>
 
 
